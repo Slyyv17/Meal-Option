@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sec-ff: "Alata",
+        sans-serif;
+    --ff-logo: "Montserrat", sans-serif;
+    --nav-bg: transparent;
+    --pri-clr: rgb(245, 16, 245);
+    --h1-ff: "Roboto",
+        sans-serif;
+    --p-ff: "Open Sans",
+        sans-serif;
+    --btn-ff: "Poppins",
+        sans-serif;
+    --anim-underline: "Lexend Deca", 
+        sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-image: transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 20px;
+}
+
+.logo {
+    font-family: var(--sec-ff);
+    margin-left: 1em;
+    color: #ffffff;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+span {
+    color: rgb(255, 163, 232);
+    font-size: 2rem;
+}
+
+.logo_header {
+    display: flex;
+}
+
+.main_nav {
+    display: flex;
+    width: 50%;
+    position: relative;
+    justify-content: space-around;
+    list-style: none;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.3rem;
+    margin-top: 0.5em;
+    text-transform: capitalize;
+}
+
+.nav_links {
+    text-decoration: none;
+    position: relative;
+}
+
+/* Animation for the underline */
+.nav_links::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--pri-clr);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover animation */
+.nav_links:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.main_nav li {
+    display: inline;
+    color: #ffffff;
+}
+
+.main_nav li a {
+    color: #ffffff;
+}
+
+.navbar_toggle {
+    display: none;
+}
+
+/* main page */
+#main-page {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid rgb(167, 167, 167);
+        box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    background-image: url('high-angle-milkshake-glasses-tray-with-chocolate-fruits.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-box {
+    width: 30%;
+    height: 38vh;
+    margin: 14em 0 0 4em;
+    border: 1px solid white;
+    background: transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.main-box::before {
+    content: '';
+    position: absolute;
+    height: 37.9vh;
+    width: 0.2em;
+    background-color: var(--pri-clr);
+}
+
+.about-smoothies {
+    margin: 1em 0 0 2em;
+}
+
+h1 {
+    margin: 1em 0 0 1.5em;
+    font-size: 1.6rem;
+    color: #fff;
+    font-family: var(--h1-ff);
+}
+
+.about-smoothies {
+    color: #fff;
+    font-family: var(--p-ff);
+    font-size: 1.2rem;
+}
+
+.smoothie-btn {
+    margin: 1.5rem 0 0 2.5rem;
+    height: 2.5em;
+    width: 9em;
+    background: var(--pri-clr);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-family: var(--btn-ff);
+    border: 0;
+    outline: none;
+    transition: transform 600ms;
+}
+
+.smoothie-btn:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.recipe-target {
+    text-decoration: none;
+    color: #fff;
+}
+
+.catchPhrase {
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 1em;
+    font-family: var(--p-ff);
+}
+
+#recipes {
+    width: 100%;
+    height: 200vh;
+    margin-top: 1em;
+    background-color: rgb(233, 227, 227);
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    flex-direction: column;
+}
+
+.first-recipe,
+.sec-recipe,
+.third-section {
+    width: 100%;
+    height: 200vh;
+    background-color: #fff;
+    /* margin-top: 0.2em; */
+}
+
+.container {
+    text-align: center;
+}
+
+.animated-underline {
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    color: purple;
+    /* Initial text color */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 3rem;
+    margin-top: 0.5em;
+    text-transform: capitalize;
+    font-family: var(--anim-underline);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.animated-underline:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--pri-clr);
+    /* Initial underline color */
+    transform-origin: 0 50%;
+    /* Set the transform origin to the left */
+    transform: scaleX(0);
+    /* Initially, set the scaleX to 0 to hide the underline */
+    transition: transform 0.3s ease;
+}
+
+.animated-underline:hover:before {
+    transform: scaleX(1);
+    /* Expand the underline on hover */
+    background-color: var(--pri-clr);
+    /* Change the underline color on hover */
+}
+
+
+/* smoothies chapter */
+.box-smoothie {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex-direction: column
+}
+
+.sub-smoothie {
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    /* gap: 2em; */
+    border: 1px solid rgb(167, 167, 167);
+        box-shadow: 2px 2px 3px rgb(192, 192, 192);
+} 
+
+.smoothie-column,
+.veggie-column,
+.spaghetti-column,
+.breakfast-bowl-column,
+.green-smoothie-column,
+.chocolate-milkshake-column {
+    width: 50%;
+    height: 80vh;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.smoothie-img-desc {
+    width: 20em;
+    height: 26em;
+    padding-top: 0.5em;
+    border: 1px solid rgb(167, 167, 167);
+    box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    margin-left: 2em;
+    transition: transform 600ms;
+}
+
+.smoothie-img-desc:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.sub-images {
+    height: 13em;
+    width: 19em;
+}
+
+.icon-time {
+    width: 19.9em;
+    height: 3em;
+    /* border: 1px solid #fbd9fc; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: var(--btn-ff);
+    font-weight: 600;
+    background-color: #fbd9fc;
+}
+
+.advantages {
+    font-family: var(--p-ff);
+    font-size: 1rem;
+    color: #333;
+}
+
+.details {
+    width: 19.9em;
+    height: 3em;
+    /* border: 1px solid #333; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0.2em;
+}
+
+.ratings {
+    width: 6em;
+    height: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #333;
+}
+
+.calories {
+    width: 9em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-family: var(--p-ff);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.smoothie-desc {
+    height: 26em;
+    width: 23em;
+    border: 1px solid rgb(167, 167, 167);
+    box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    padding-top: 1em;
+    border-radius: 2em;
+    overflow-y: auto;
+    list-style-type: decimal;
+}
+
+.equipment {
+    font-size: 2rem;
+    font-family: var(--h1-ff);
+    color: #333;
+    text-transform: capitalize;
+}
+
+.equipment-type {
+    color: #333;
+    font-family: var(--p-ff);
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.smoothie-desc li {
+    list-style: none;
+
+}
+
+.title-smoothie {
+    color: #333;
+    font-family: var(--h1-ff);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.recipes-one {
+    font-family: var(--p-ff);
+    font-size: 1rem;
+    color: #333;
+    text-transform: capitalize;
+}
+
+/* for the second smoothie div */
+.smoothie-two {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2em;
+}
+
+.smoothie-img-desc-two {
+    width: 20em;
+    height: 26em;
+    padding-top: 0.5em;
+    border: 1px solid rgb(167, 167, 167);
+    box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    margin-left: 2em;
+    transition: transform 600ms;
+}
+
+.smoothie-img-desc-two:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+footer {
+    width: 100%;
+    height: 40vh;
+    border: 1px solid  red;
+}
+
+/* responsive navbar */
+@media only screen and (max-width : 992px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 99.8%;
+        /* padding-top: 2em;
+    padding-bottom: 2em; */
+        background-image: var(--nav-bg);
+        font-size: 20px;
+        position: absolute;
+        z-index: 100;
+    }
+
+    .main_nav {
+        display: none;
+    }
+
+    .show_nav {
+        padding-top: 2em;
+        display: flex;
+        width: 100%;
+        /* initially view-width the main mistake */
+        height: 90vh;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .main_nav li {
+        width: 100%;
+        height: 50px;
+        font-size: 25px;
+        justify-content: center;
+        text-align: center;
+        padding: 0%;
+    }
+
+    .main_nav a:hover {
+        color: rgb(226, 197, 226);
+        background: transparent;
+    }
+
+    .navbar_toggle {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 30px;
+        color: #ffffff;
+        background: transparent;
+        border-color: transparent;
+        transition: all 0.3s linear;
+        cursor: pointer;
+        display: block;
+    }
+
+    .logo_header {
+        width: 100%;
+        justify-content: space-between;
+        /* margin-right: 2%; */
+    }
+}
+
+
+/* mobile responsive */
+@media only screen and (max-width: 769px) {
+    #main-page {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .main-box {
+        width: 90%;
+        height: 49vh;
+        margin: 14em 0 0 1em;
+    }
+
+    .main-box::before {
+        content: '';
+        position: absolute;
+        height: 48.9vh;
+        width: 0.2em;
+        background-color: var(--pri-clr);
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .animated-underline {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    #recipes {
+        width: 100%;
+        height: 200vh;
+        margin-top: 1em;
+        background-color: rgb(233, 227, 227);
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .first-recipe,
+    .sec-recipe,
+    .third-section {
+        width: 100%;
+        height: 300vh;
+        background-color: #fff;
+        margin-top: 0.2em;
+    }
+
+    .box-smoothie {
+        width: 100%;
+        height: 280vh;
+        display: flex;
+        gap: 1em;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .sub-smoothie {
+        width: 100%;
+        height: 280vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 2em;
+        border: 1px solid rgb(167, 167, 167);
+        box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    }
+
+    .smoothie-column,
+    .veggie-column,
+    .spaghetti-column,
+    .breakfast-bowl-column,
+    .green-smoothie-column,
+    .chocolate-milkshake-column {
+        width: 100%;
+        height: 150vh;
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .smoothie-img-desc,
+    .smoothie-img-desc-two {
+        margin-left: 0em;
+    }
+
+    .smoothie-img-desc {
+        width: 20em;
+        height: 26em;
+        padding-top: 0.5em;
+        border: 1px solid rgb(167, 167, 167);
+        box-shadow: 2px 2px 3px rgb(192, 192, 192);
+        transition: transform 600ms;
+    }
+
+    .smoothie-desc {
+        width: 22em;
+    }
+}
+
+
+/* tablet and ipads responsive */
+@media only screen and (min-width: 770px) and
+(max-width: 1025px) {
+    #main-page {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 10em;
+        padding-left: 0em;
+    }
+
+    .main-box {
+        width: 80%;
+        height: 35vh;
+    }
+
+    .main-box::before {
+        content: '';
+        position: absolute;
+        height: 34.9vh;
+        width: 0.2em;
+        background-color: var(--pri-clr);
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-left: 1em;
+    }
+
+    .about-smoothies {
+        font-size: 1.0rem;
+    }
+
+    .smoothie-btn {
+        font-size: 1.2rem;
+        margin: 1.5em 0 0 1.8em;
+    }
+
+    .first-recipe,
+    .sec-recipe,
+    .third-section,
+    #contact-div {
+        width: 100%;
+        height: 400vh;
+        background-color: #fff;
+        margin-top: 0.2em;
+    }
+
+    .box-smoothie {
+        width: 100%;
+        height: 150vh;
+        display: flex;
+        gap: 1em;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .sub-smoothie {
+        width: 100%;
+        height: 150vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 2em;
+        border: 1px solid rgb(226, 226, 226);
+        box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    }
+
+    .smoothie-column,
+    .veggie-column,
+    .spaghetti-column,
+    .breakfast-bowl-column,
+    .green-smoothie-column,
+    .chocolate-milkshake-column {
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+}
+
+/* special devices */
+@media only screen and (min-width: 1026px) and (max-width: 1465px) {
+    #main-page {
+        padding-bottom: 3em;
+    }
+    .main-box {
+        width: 70%;
+        height: 45vh;
+    }
+
+    .main-box::before {
+        content: '';
+        position: absolute;
+        height: 44.9vh;
+        width: 0.2em;
+        background-color: var(--pri-clr);
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-left: 0.8em;
+    }
+
+    .about-smoothies {
+        font-size: 1.2rem;
+    }
+
+    .smoothie-btn {
+        font-size: 1.2rem;
+        margin: 2rem 0 0 2.2em;
+    }
+
+    .first-recipe,
+    .sec-recipe,
+    .third-section {
+        width: 100%;
+        height: 400vh;
+        background-color: #fff;
+        margin-top: 0.2em;
+    }
+    
+    .box-smoothie {
+        width: 100%;
+        height: 200vh;
+        display: flex;
+        gap: 1em;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .sub-smoothie {
+        width: 100%;
+        height: 200vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 2em;
+        border: 1px solid rgb(167, 167, 167);
+        box-shadow: 2px 2px 3px rgb(192, 192, 192);
+    }
+
+    .smoothie-column,
+    .veggie-column,
+    .spaghetti-column,
+    .breakfast-bowl-column,
+    .green-smoothie-column,
+    .chocolate-milkshake-column {
+        width: 90vw;
+        height: 70vh;
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
